@@ -1,0 +1,38 @@
+#
+# Description: How-to install (documentation).
+# Version:     $Id: Install 235 2004-06-21 11:25:22Z romland $
+# License:     (c)2004 Joakim Romland, see Jorinde/doc/License
+#
+
+THIS FILE IS NOT UP-TO-DATE! TODO!
+
+/**
+ * To install on top of the DGD kernel:
+ *
+ * - Extract this package to [MUDLIB-ROOT]/usr/System/ (directory httpd should
+ *   be created).
+ *
+ * - Add a new binary port to your DGD configuration. By default Jorinde will
+ *   use index 1 of the array. This would start HTTPD on port 80:
+ *   |  binary_port = ({ 6048, 80 });
+ *   ...or as of DGD 1.2.70 (or around there):
+ *   |  ([ "*":6048, "*":80 ])
+ *
+ * - Create directory: [MUDLIB-ROOT]/usr/System/www/root
+ *
+ * - Make a copy of obj/app.c and modify it to your likings, for now you will
+ *   also need to modify sys/server.c to use your modified app.c -- this
+ *   WILL change.
+ *
+ * - Add the following line to /usr/System/initd's create() function:
+ *   if(!find_object("httpd/initd")) compile_object("httpd/initd");
+ *   Note that it depends on some kernel-files to be compiled before
+ *   it will work (accessd comes to mind, for instance).
+ *
+ * - Restart DGD.
+ *
+ * - Pray.
+ *
+ * - Point a web-browser to http://your-hostname/
+ */
+
