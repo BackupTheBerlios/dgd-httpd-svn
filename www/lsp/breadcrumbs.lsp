@@ -1,28 +1,13 @@
 <%+
 #include <kernel/kernel.h>
 #include <type.h>
-#if 0
-#define OB "/usr/www/design/01"
-#endif
 
-void argh() 
+string argh() 
 {
     object design;
 	string ret;
 	mixed **arr;
 	int i;
-#if 0
-	if(!find_object(OB))
-		compile_object(OB);
-
-	design = find_object(OB);
-	design->init();
-#endif
-	design->title("Breadcrumbs");
-	design->left_para("LSP",
-		"You're currently looking at an LPC Server Page, it's a simple " +
-		"implementation so far. The parser sucks and we don't do " +
-		"recompiling-on-demand of related objects (inherited or included).");
 
 	ret = "";
 	i = 0;
@@ -33,11 +18,39 @@ void argh()
 		ret += "<a href=\"/" + arr[i][0] + "\">" + arr[i][0] + "</a>";
 		ret += "<br>";
     }
-	design->main_para("Your breadcrumbs in this session", ret);
-	response->write( design->content() );
+	return ret;
 }
 +%>
-<%
-	argh();
-%>
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" >
+    <title>webserver/webdav in lpc (using DGD)</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/></head>
+<body>
+<div id="container">
+    <div id="intro">
+        <div id="preamble">
+            <h3>
+                <span>home</span>
+            </h3>
+            <p class="p1">
+                <span>
+                    Home of <acronym title="a web-server written in LPC">
+                    Jorinde httpd</acronym>, written by Joakim Romland.
+                </span>
+            </p>
+        </div>
+    </div>
 
+    <div id="supportingText">
+        <div id="explanation">
+            <h3><span>Breadcrumbs</span></h3>
+            <p class="p1"><span>
+<%= argh() %>
+            </span></p>
+	 </div>
+    </div>
+</div>
+</body>
+</html>

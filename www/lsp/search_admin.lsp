@@ -2,24 +2,9 @@
 # include "../../jorinde.h"
 inherit LIB_HTTP_STRING;
 
-void visualize_index()
+void start_index()
 {
-    int i, sz;
-    string *chars;
-	mapping index;
-
-	index = (JORINDE_INDEX+"sys/indexd")->get_index();
-
-    chars = map_indices(index);
-	/*chars = ({ "z" });*/
-    for(i = 0; i < sizeof(chars); i++) {
-        response->write( chars[i] + "\n");
-        if( index[chars[i]] ) {
-            response->write("\n" +
-				object_name(index[chars[i]]) + "\n" +
-				index[chars[i]]->visualize_index(chars[i], 1) + "\n");
-        }
-    }
+	(JORINDE_INDEX+"sys/indexd")->create_index("/doc/");
 }
 
 +%>
@@ -37,7 +22,16 @@ void visualize_index()
 	response->write("Indexing engine is not available. Enable __TEST_INDEXD__");
 	return;
 #endif
-	visualize_index();
+
+	if(request->item("start")) {
+		response->write("Starting indexing...<br>You may resume doing " + 
+						"whatever you were doing.");
+		start_index();
+	} else {
+%>
+		<a href="search_admin.lsp?start=yes">start indexing</a>
+<%
+	}
 %>
 </pre>
 </body>
