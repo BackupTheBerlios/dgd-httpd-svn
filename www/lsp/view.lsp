@@ -26,7 +26,7 @@ string create_linked_path(string path)
     for(i = 0; i < (sizeof(arr)-1); i++) {
         arr[i] += "/";
         partial += arr[i];
-        ret +=  "<a href=\"/ls.lsp?path=/" + partial + "\">" +
+        ret +=  "<a href=\"/lsp/ls.lsp?path=/" + partial + "\">" +
                 arr[i] +
                 "</a>&nbsp;";
     }

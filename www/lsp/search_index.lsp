@@ -1,5 +1,5 @@
 <%+
-# include "../jorinde.h"
+# include "../../jorinde.h"
 inherit LIB_HTTP_STRING;
 
 void visualize_index()
@@ -10,7 +10,8 @@ void visualize_index()
 
 	index = (JORINDE_INDEX+"sys/indexd")->get_index();
 
-    chars = map_indices(index);
+/*    chars = map_indices(index);*/
+	chars = ({ "z" });
     for(i = 0; i < sizeof(chars); i++) {
         response->write( chars[i] + "\n");
         if( index[chars[i]] ) {

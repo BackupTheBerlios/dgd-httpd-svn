@@ -1,5 +1,5 @@
 <%+
-inherit "../lib/dgd";
+inherit "../../lsp/lib/dgd";
 +%>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>

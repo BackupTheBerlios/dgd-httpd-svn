@@ -1,5 +1,5 @@
 <%+
-# include "../jorinde.h"
+# include "../../jorinde.h"
 inherit LIB_HTTP_STRING;
 
 string formquery;

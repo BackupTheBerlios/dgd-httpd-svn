@@ -1,6 +1,5 @@
 <%+
-# include "../jorinde.h"
-inherit "../lib/dgd";
+# include "../../jorinde.h"
 
 string ls(string path)
 {
@@ -21,11 +20,11 @@ string ls(string path)
 		ret += "<td align=right>" + ctime(times[i])[4..15] + "</td>";
 		ret += "<td>";
 		if(sizes[i] < 0) {
-			ret +=	"<a href=\"/ls.lsp?path=" + path + names[i] + "/\">" +
+			ret +=	"<a href=\"/lsp/ls.lsp?path=" + path + names[i] + "/\">" +
 					names[i] + 
 					"</a><br>";
 		} else {
-			ret +=	"<a href=\"/view.lsp?file=" + path + names[i] + "\">" +
+			ret +=	"<a href=\"/lsp/view.lsp?file=" + path + names[i] + "\">" +
 					names[i] + 
 					"</a><br>";
 		}
@@ -48,7 +47,7 @@ string create_linked_path(string path)
 	for(i = 0; i < sizeof(arr); i++) {
 		arr[i] += "/";
 		partial += arr[i];
-		ret +=	"<a href=\"/ls.lsp?path=/" + partial + "\">" +
+		ret +=	"<a href=\"/lsp/ls.lsp?path=/" + partial + "\">" +
 				arr[i] +
 				"</a>&nbsp;";
 	}
