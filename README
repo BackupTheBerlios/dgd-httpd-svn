@@ -1,12 +1,12 @@
     /dgd-httpd/
-        main/
+        trunk/
             usr/
                 Jorinde/            Main code
                 System/             Privileged objects
                 www/                www-support code
         vendor/                     Vendor imports
             objectd/
-        branch/                     branches
+        branches/                   branches
         www/                        web-resources
             lsp/                    LSP pages used for testing/whatnot
         plugins/
