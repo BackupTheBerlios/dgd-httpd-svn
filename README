@@ -1,3 +1,4 @@
+Structure of the repository:
     /dgd-httpd/
         trunk/
             usr/
@@ -9,5 +10,18 @@
         branches/                   branches
         www/                        web-resources
             lsp/                    LSP pages used for testing/whatnot
-        plugins/
+        plugins/					_External_ plugins.
+
+You probably want to check out the documentation in trunk/usr/Jorinde/doc/
+and all doc/ directories below there.
+
+If you check out the entire source tree, you will want to move things around 
+a bit. Under the Kernel Library for DGD you will probably want to move 
+things along these lines:
+
+Path in source tree                  Path within the DGD environment
+--------------------------------------------------------------------
+/dgd-httpd/trunk/usr          to     /usr 
+/dgd-httpd/www/lsp            to     /usr/www/webroot/lsp
+/dgd-httpd/vendor/objectd     to     /usr/System/objectd
 
