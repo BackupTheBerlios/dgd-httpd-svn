@@ -1,1 +1,0 @@
-inherit LIB_HTTP_STRING;
