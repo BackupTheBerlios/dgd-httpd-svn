@@ -1,0 +1,16 @@
+This is Phantasmal's objectd written by Noah Gibbs, the HTTPD has no
+dependencies on it; but it's a nice thing to have. Note that I have made
+minor changes to it to get it to work outside of the Phantasmal library.
+Put in mind that little of this actually needs to be in this directory,
+in fact, only the two objects in sys/ is necessary -- the other are just
+dependencies which I put here for convenience (I don't use any of Noah's
+objects elsewhere).
+
+Again, credits should go to Noah Gibbs for everything in this directory!
+
+Visit Phantasmal's site at http://phantasmal.sf.net
+
+
+Cheers,
+Joakim Romland
+
