@@ -19,7 +19,7 @@
 #ifdef __PHANTASMAL__
 	#include <phantasmal/log.h>
 #else
-	#include "~/jorinde.h"
+	#include "../../jorinde.h"
 	#define HEAVY_ARRAY		USR_SYSTEM+"objectd//obj/heavy_array"
 	#define LIB_LWO			USR_SYSTEM+"objectd/data/lib_issue"
 	#define CLONABLE_LWO	USR_SYSTEM+"objectd/data/clonable_issue"
